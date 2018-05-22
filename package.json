@@ -2,18 +2,24 @@
   "name": "udemy-course",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel-node server.js"
+    "build": "babel src -d lib",
+    "watch": "nodemon watch lib/*/*.js",
+    "start": "npm run build && npm run watch && node lib/index.js",
+    "json:server": "json-server --watch db.json"
   },
   "author": "adalto junior",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
-    "graphql": "^0.13.2"
+    "graphql": "^0.13.2",
+    "json-server": "^0.12.2",
+    "nodemon": "^1.17.4"
   }
 }

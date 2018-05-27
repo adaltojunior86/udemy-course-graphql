@@ -9,6 +9,6 @@ app.use('/graphQl', expressGraphQl({
     schema
 }))
 
-app.listen(4000, () => {
-    console.log("teste");
+app.listen(4001, () => {
+    console.log("teste5");
 });

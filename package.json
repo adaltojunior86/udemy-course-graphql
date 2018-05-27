@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib",
-    "watch": "nodemon watch lib/*/*.js",
-    "start": "npm run build && npm run watch && node lib/index.js",
+    "watch": "nodemon src/*/*.js --exec babel-node --presets env",
+    "start": "nodemon --watch src --exec 'babel src -d lib && node lib/index.js'",
     "json:server": "json-server --watch db.json"
   },
   "author": "adalto junior",
